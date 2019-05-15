@@ -97,7 +97,22 @@ public class Add {
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        int flag = 0, i=0 ,j=0;
+        for(int num:arrayList){
+            if(num%2 == 0){
+                flag++;
+            }
+        }
+        Integer[] arr = new Integer[flag];
+        for(Object num:arrayList){
+            if(Integer.parseInt(num.toString())%2 == 0 && arrayList.indexOf(num) == i){
+                arr[j] = Integer.parseInt(num.toString());
+                j++;
+            }
+            i++;
+        }
+        List<Integer> resList = Arrays.asList(arr);
+        return resList;
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
