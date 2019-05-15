@@ -65,7 +65,13 @@ public class Add {
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        double middle;
+        if(arrayList.size()%2 == 0){
+            middle = (arrayList.get(arrayList.size()/2)+arrayList.get((arrayList.size()/2)-1))/2;
+        }else{
+            middle = arrayList.get(arrayList.size()/2);
+        }
+        return middle;
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
