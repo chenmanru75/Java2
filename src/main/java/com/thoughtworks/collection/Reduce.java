@@ -39,12 +39,9 @@ public class Reduce {
     }
 
     public double getAverage() {
-        double sum = 0;
-        double avg = 0;
-        for (int i = 0; i < arrayList.size(); i++) {
-            sum = sum + arrayList.get(i);
-        }
-        avg = sum/arrayList.size();
+        Stream<Integer> stream = Arrays.stream(arrayList.toArray(new Integer[arrayList.size()]));
+        double sum = stream.reduce((i, j) -> i + j).get();
+        double avg = sum/arrayList.size();
         return avg;
     }
 
