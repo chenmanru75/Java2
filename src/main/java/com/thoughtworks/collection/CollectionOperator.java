@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import org.apache.commons.collections.list.AbstractLinkedList;
 import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
@@ -110,6 +111,19 @@ public class CollectionOperator {
     }
 
     public List<Integer> addUncommonElement(Integer[] firstArray, Integer[] secondArray) {
-        throw new NotImplementedException();
+        List<Integer> listA = Arrays.asList(firstArray);
+        List<Integer> listB = Arrays.asList(secondArray);
+        List<Integer> union = new ArrayList<>();
+        for(Integer a:listA){
+            if(!union.contains(a)){
+                union.add(a);
+            }
+        }
+        for(Integer b:listB){
+            if(!union.contains(b)){
+                union.add(b);
+            }
+        }
+        return union;
     }
 }
