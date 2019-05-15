@@ -22,6 +22,11 @@ public class Add {
 
     public int getSumOfOdds(int leftBorder, int rightBorder) {
         int sum = 0;
+        if(leftBorder >= rightBorder){
+            rightBorder = leftBorder - rightBorder;
+            leftBorder = leftBorder - rightBorder;
+            rightBorder = leftBorder + rightBorder;
+        }
         for (int i = leftBorder; i < rightBorder+1; i++) {
             if(i%2 != 0){
                 sum = sum + i;
