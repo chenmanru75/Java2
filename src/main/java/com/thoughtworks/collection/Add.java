@@ -82,7 +82,18 @@ public class Add {
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-        throw new NotImplementedException();
+        boolean flag = false;
+        if(specialElment%2 == 1 ){
+            flag = false;
+        }else{
+            for(int num:arrayList){
+                if(num == specialElment){
+                    flag = true;
+                    break;
+                }
+            }
+        }
+        return flag;
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
