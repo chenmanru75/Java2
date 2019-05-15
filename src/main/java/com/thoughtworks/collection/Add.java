@@ -54,7 +54,13 @@ public class Add {
     }
 
     public int getSumOfProcessedOdds(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        int sum = 0;
+        for(int num:arrayList){
+            if(num%2 == 1){
+                sum = sum + (num*3+5);
+            }
+        }
+        return sum;
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
