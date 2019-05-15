@@ -23,6 +23,12 @@ public class Flaten {
     }
 
     public List<Integer> transformToUnrepeatedOneDimesional() {
-        throw new NotImplementedException();
+        List<Integer> list = new ArrayList<>();
+        List<Integer> res = new ArrayList<>();
+        Flaten flaten = new Flaten(array);
+        list = flaten.transformToOneDimesional();
+        Filter filter = new Filter(list);
+        res = filter.getDifferentElements();
+        return res;
     }
 }
