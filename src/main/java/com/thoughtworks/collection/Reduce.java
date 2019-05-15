@@ -13,7 +13,13 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+        int max = arrayList.get(0);
+        for (int i = 1; i < arrayList.size(); i++) {
+            if(arrayList.get(i)>max){
+                max = arrayList.get(i);
+            }
+        }
+        return max;
     }
 
     public double getMinimum() {
