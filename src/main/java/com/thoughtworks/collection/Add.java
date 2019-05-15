@@ -69,7 +69,16 @@ public class Add {
     }
 
     public double getAverageOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        int sum = 0, flag = 0;
+        double avg;
+        for(int num:arrayList){
+            if(num%2 == 0){
+                sum = sum + num;
+                flag++;
+            }
+        }
+        avg = sum/flag;
+        return avg;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
