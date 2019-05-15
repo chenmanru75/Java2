@@ -5,6 +5,7 @@ import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.ArrayList;
 
 public class CollectionOperator {
     public List<Integer> getListByInterval(int left, int right) {
@@ -96,7 +97,16 @@ public class CollectionOperator {
     }
 
     public List<Integer> popCommonElement(int[] firstArray, int[] secondArray) {
-        throw new NotImplementedException();
+        ArrayList objArray = new ArrayList();
+        ArrayList objArray2 = new ArrayList();
+        for (int i = 0; i < firstArray.length ; i++) {
+            objArray.add(i,firstArray[i]);
+        }
+        for (int i = 0; i < secondArray.length ; i++) {
+            objArray2.add(i,secondArray[i]);
+        }
+        objArray.retainAll(objArray2);
+        return objArray;
     }
 
     public List<Integer> addUncommonElement(Integer[] firstArray, Integer[] secondArray) {
