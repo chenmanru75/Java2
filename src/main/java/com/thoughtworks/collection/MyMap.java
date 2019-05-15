@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class MyMap {
@@ -39,10 +40,18 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        throw new NotImplementedException();
+        return null;
     }
 
     public List<Integer> sortFromSmall() {
-        throw new NotImplementedException();
+        Integer[] arr = new Integer[array.size()];
+        int i = 0;
+        for(int num:array){
+            arr[i] = num;
+            i++;
+        }
+        Arrays.sort(arr);
+        List<Integer> res = Arrays.asList(arr);
+        return res;
     }
 }
