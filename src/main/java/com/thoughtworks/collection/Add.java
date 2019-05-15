@@ -116,7 +116,19 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        for (int i = 0; i < arrayList.size(); i++) {
+            for (int j = i+1; j < arrayList.size(); j++) {
+                if(arrayList.get(i)%2 == 1){
+                    if(arrayList.get(i) < arrayList.get(j)){
+                        int bef = arrayList.get(i);
+                        int aft = arrayList.get(j);
+                        arrayList.set(i,aft);
+                        arrayList.set(j,bef);
+                    }
+                }
+            }
+        }
+        return arrayList;
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
