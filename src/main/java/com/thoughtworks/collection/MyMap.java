@@ -32,7 +32,20 @@ public class MyMap {
     }
 
     public List<String> mapLetter() {
-        throw new NotImplementedException();
+        LinkedHashMap<Integer,String> staff = new LinkedHashMap<>();
+        int j = 0;
+        for(int num:array){
+            staff.put(num,letters[j]);
+            j++;
+        }
+        String[] res = new String[array.size()];
+        int i=0;
+        for(int key: staff.keySet()){
+            res[i] = staff.get(key);
+            i++;
+        }
+        List<String> list = Arrays.asList(res);
+        return list;
     }
 
     public List<String> mapLetters() {
