@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.lang.reflect.Array;
@@ -33,10 +34,10 @@ public class MyMap {
 
     public List<String> mapLetter() {
         LinkedHashMap<Integer,String> staff = new LinkedHashMap<>();
-        int j = 0;
+//        int j = 0;
         for(int num:array){
-            staff.put(num,letters[j]);
-            j++;
+            staff.put(num,letters[num-1]);
+//            j++;
         }
         String[] res = new String[array.size()];
         int i=0;
@@ -49,7 +50,37 @@ public class MyMap {
     }
 
     public List<String> mapLetters() {
-        throw new NotImplementedException();
+        LinkedHashMap<Integer,String> staff = new LinkedHashMap<>();
+        for(int num:array){
+            int chushu = num/26;
+            int yushu = num%26;
+            String after;
+            String before;
+            if(yushu == 0){
+                after = "z";
+                if(chushu == 1 || chushu == 0){
+                    before = "";
+                }else{
+                    before = letters[chushu-2];
+                }
+            }else{
+                after = letters[yushu-1];
+                if(chushu == 0){
+                    before = "";
+                }else{
+                    before = letters[chushu-1];
+                }
+            }
+            staff.put(num,before + after);
+        }
+        String[] res = new String[array.size()];
+        int i=0;
+        for(int key: staff.keySet()){
+            res[i] = staff.get(key);
+            i++;
+        }
+        List<String> list = Arrays.asList(res);
+        return list;
     }
 
     public List<Integer> sortFromBig() {
