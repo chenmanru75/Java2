@@ -40,7 +40,22 @@ public class MyMap {
     }
 
     public List<Integer> sortFromBig() {
-        return null;
+        Integer[] arr = new Integer[array.size()];
+        Integer[] arr2 = new Integer[array.size()];
+        int i = 0;
+        for(int num:array){
+            arr[i] = num;
+            i++;
+        }
+        Arrays.sort(arr);
+
+        int j = array.size()-1;
+        for(int num:arr){
+            arr2[j] = num;
+            j--;
+        }
+        List<Integer> res = Arrays.asList(arr2);
+        return res;
     }
 
     public List<Integer> sortFromSmall() {
