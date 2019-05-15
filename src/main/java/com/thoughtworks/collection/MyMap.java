@@ -2,8 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class MyMap {
 
@@ -17,7 +16,18 @@ public class MyMap {
     }
 
     public List<Integer> getTriple() {
-        throw new NotImplementedException();
+        LinkedHashMap<Integer,Integer> staff = new LinkedHashMap<>();
+        for(int num:array){
+            staff.put(num,num*3);
+        }
+        Integer[] res = new Integer[array.size()];
+        int i=0;
+        for(int key: staff.keySet()){
+            res[i] = staff.get(key);
+            i++;
+        }
+        List<Integer> list = Arrays.asList(res);
+        return list;
     }
 
     public List<String> mapLetter() {
