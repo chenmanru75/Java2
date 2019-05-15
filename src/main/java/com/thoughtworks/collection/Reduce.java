@@ -3,6 +3,8 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
+import java.util.stream.Stream;
+import java.util.Arrays;
 
 public class Reduce {
 
@@ -13,13 +15,15 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        int max = arrayList.get(0);
-        for (int i = 1; i < arrayList.size(); i++) {
-            if(arrayList.get(i)>max){
-                max = arrayList.get(i);
-            }
-        }
-        return max;
+//        int max = arrayList.get(0);
+////        for (int i = 1; i < arrayList.size(); i++) {
+////            if(arrayList.get(i)>max){
+////                max = arrayList.get(i);
+////            }
+////        }
+////        return max;
+        Stream<Integer> stream = Arrays.stream(arrayList.toArray(new Integer[arrayList.size()]));
+        return stream.reduce(Integer::max).get();
     }
 
     public double getMinimum() {
