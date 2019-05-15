@@ -27,13 +27,15 @@ public class Reduce {
     }
 
     public double getMinimum() {
-        int min = arrayList.get(0);
-        for (int i = 1; i < arrayList.size(); i++) {
-            if(arrayList.get(i)<min){
-                min = arrayList.get(i);
-            }
-        }
-        return min;
+//        int min = arrayList.get(0);
+//        for (int i = 1; i < arrayList.size(); i++) {
+//            if(arrayList.get(i)<min){
+//                min = arrayList.get(i);
+//            }
+//        }
+//        return min;
+        Stream<Integer> stream = Arrays.stream(arrayList.toArray(new Integer[arrayList.size()]));
+        return stream.reduce(Integer::min).get();
     }
 
     public double getAverage() {
