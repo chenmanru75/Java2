@@ -1,5 +1,6 @@
 package com.thoughtworks.collection;
 
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Arrays;
@@ -26,7 +27,49 @@ public class CollectionOperator {
     }
 
     public List<Integer> getEvenListByIntervals(int left, int right) {
-        throw new NotImplementedException();
+        int flag = 0;
+        if(left <= right){
+            int Copy = left;
+            for (int i = 0; i <= right-left; i++) {
+                if(Copy%2 == 0){
+                    flag++;
+                }
+                Copy++;
+            }
+        }else{
+            System.out.println(left);
+            int Copy = right;
+            for (int i = 0; i <= left-right; i++) {
+                if(Copy%2 == 0){
+                    flag++;
+                }
+                Copy++;
+            }
+        }
+        Integer[] arr = new Integer[flag];
+        if(left <= right){
+            int Copy = left;
+            int j=0;
+            for (int i = 0; i <= right-left; i++) {
+                if(Copy%2 == 0){
+                    arr[j] = Copy;
+                    j++;
+                }
+                Copy = Copy + 1;
+            }
+        }else{
+            int Copy = left;
+            int j=0;
+            for (int i = 0; i <= left-right; i++) {
+                if(Copy%2 == 0){
+                    arr[j] = Copy;
+                    j++;
+                }
+                Copy = Copy - 1;
+            }
+        }
+        List<Integer> resList = Arrays.asList(arr);
+        return resList;
     }
 
     public List<Integer> popEvenElments(int[] array) {
