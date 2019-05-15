@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.time.Year;
+import java.util.Arrays;
 import java.util.List;
 
 public class Add {
@@ -84,6 +85,13 @@ public class Add {
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        Integer[] arr = new Integer[arrayList.size()-1];
+        for (int i=0;i<arrayList.size()-1;i++) {
+            int before = arrayList.get(i);
+            int after = arrayList.get(i+1);
+            arr[i] = 3*(before+after);
+        }
+        List<Integer> resList = Arrays.asList(arr);
+        return resList;
     }
 }
