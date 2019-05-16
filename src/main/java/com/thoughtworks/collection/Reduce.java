@@ -57,7 +57,14 @@ public class Reduce {
     }
 
     public int getFirstEven() {
-        throw new NotImplementedException();
+        int res = 0;
+        for(int num:arrayList){
+            if(num%2 == 0){
+                res = num;
+                break;
+            }
+        }
+        return res;
     }
 
     public int getIndexOfFirstEven() {
