@@ -79,7 +79,20 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-
+        Integer[] array = new Integer[]{1, 4, 27, 20, 4, 9, 15, 4, 1, 11};
+        List<Integer> arrayList1 = Arrays.asList(array);
+        boolean flag = true;
+        if(arrayList.size() == arrayList1.size()){
+            for(int i = 0; i<arrayList.size();i++){
+                if(arrayList.get(i) != arrayList1.get(i)){
+                    flag = false;
+                    break;
+                }
+            }
+        }else{
+            flag = false;
+        }
+        return flag;
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
