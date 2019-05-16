@@ -79,11 +79,20 @@ public class Reduce {
     }
 
     public boolean isEqual(List<Integer> arrayList) {
-        throw new NotImplementedException();
+
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        int len = arrayList.size();
+        double sum ;
+        double res ;
+        if(len%2 == 0){
+            sum = Integer.parseInt(singleLink.getNode(6).toString())+Integer.parseInt(singleLink.getNode(7).toString());
+            res = sum/2;
+        }else{
+            res = Integer.parseInt(singleLink.getNode(6).toString());
+        }
+        return res;
     }
 
     public int getLastOdd() {

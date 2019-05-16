@@ -66,6 +66,7 @@ public class ReduceTest {
         List<Integer> arrayList = Arrays.asList(array);
 
         SingleLink<Integer> singleLink = mock(SingleLink.class);
+
         when(singleLink.getNode(6)).thenReturn(10);
         when(singleLink.getNode(7)).thenReturn(9);
 
